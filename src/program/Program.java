@@ -15,9 +15,9 @@ public class Program {
         Tiger tigerNancy = new Tiger(birthday, 'W', "Nancy", wald, "Bangladesch");
         Käfig käfig = new Käfig(1, "Tiger Käfig", (float) 66, (float) 66, (float) 66);
         WasserTyp salzwasser = WasserTyp.Salzwasser;
-
         Wasser wasser = new Wasser("Meer", (float) 50, (float) 50, 100, salzwasser);
 
+        //start of the program
         zoo.addKäfig(käfig);
         System.out.println(zoo.steckeTierInFreienKäfig(tiger, wald));
         System.out.println(zoo.steckeTierInFreienKäfig(tigerNancy, wasser));
