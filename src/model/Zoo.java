@@ -36,14 +36,14 @@ public class Zoo {
         }
     }
 
-    public boolean steckeTierInFreienKäfig(Tier t){
+    public boolean steckeTierInFreienKäfig(Tier t, Umweltzone umweltzone){
 
         for (Käfig käfig : käfige) {
 
             if (!käfig.istBesetzt()){
 
-                if (käfig.getUmUmweltzone().match(t.getUmweltzone(), käfig.getUmUmweltzone())){
-                    käfig.addTierArt(t);
+                if (umweltzone.match(t.getUmweltzone(), umweltzone)){
+                    käfig.addTierArt(t, umweltzone);
                     return true;
                 }
             }

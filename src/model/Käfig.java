@@ -10,7 +10,6 @@ public class Käfig {
     private float länge;
     private float breite;
     private float höhe;
-    private Umweltzone umUmweltzone;
     private List<Tier> tierArt = new ArrayList<Tier>();
 
 
@@ -42,10 +41,6 @@ public class Käfig {
         return höhe;
     }
 
-    public Umweltzone getUmUmweltzone() {
-        return umUmweltzone;
-    }
-
     public List<Tier> getBelegung(){
         return this.tierArt;
     }
@@ -58,8 +53,11 @@ public class Käfig {
         return true;
     }
 
-    public void addTierArt(Tier tier){
-        this.tierArt.add(tier);
+    public void addTierArt(Tier tier, Umweltzone umweltzone){
+
+        if (umweltzone.match(tier.getUmweltzone(), umweltzone)) {
+            this.tierArt.add(tier);
+        }
     }
 
     public boolean removeTierArt(Tier tier){
